@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Mad at You!</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 8vw;
+            font-weight: bold;
+            animation: shake 0.5s infinite alternate;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(-5px); }
+            100% { transform: translateX(5px); }
+        }
+
+        h3 {
+            font-size: 6vw;
+            font-weight: bold;
+            margin-top: 10px;
+            animation: bounce 1s infinite ease-in-out;
+            color: yellow;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        p {
+            font-size: 4vw;
+            margin-top: 10px;
+        }
+
+        .dodging-button {
+            margin-top: 30px;
+            padding: 15px 25px;
+            font-size: 4vw;
+            font-weight: bold;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            transition: 0.2s;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>I'm MAD at YOU! 😠</h1>
+    <h3>You are Short!!!!!!!!!!!!!!!!!</h3>
+    <p>And there's nothing you can do about it!</p>
+    <button class="dodging-button" id="apology-btn">Apologize?</button>
+
+    <script>
+        const button = document.getElementById("apology-btn");
+
+        function moveButton() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+
+        button.addEventListener("click", moveButton);  // For touchscreens
+        button.addEventListener("mouseover", moveButton);  // For desktops
+
+    </script>
+
+</body>
+</html>
